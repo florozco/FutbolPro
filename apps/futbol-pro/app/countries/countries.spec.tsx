@@ -1,12 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Ui from './ui';
+import Countries from './countries';
 
-/*
-describe('Ui', () => {
+describe('Countries', () => {
   it('should render successfully', () => {
-    const { baseElement } = render( <Ui  />);
+    const { baseElement } = render(<Countries />);
     expect(baseElement).toBeTruthy();
   });
 });
-*/

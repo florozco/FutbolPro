@@ -1,5 +1,9 @@
-import styled from 'styled-components';
+import { IndexProps } from '@futbol-pro/types';
+import { request, gql } from 'graphql-request'
 import { Ui } from '@futbol-pro/ui';
+import Countries from '../app/countries/countries';
+import Link from 'next/Link';
+import styled from 'styled-components';
 
 const StyledPage = styled.div`
   .page {
@@ -7,16 +11,12 @@ const StyledPage = styled.div`
 `;
 
 export function About() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.styled-components file.
-   */
+
   return (
     <StyledPage>
-      <h2>Prueba &amp; About</h2>
+      <Ui title='about' showTitle={true} />
       <p>Thank you for using and showing some ♥ for Nx.</p>
-       </StyledPage>
+    </StyledPage>
   );
 }
 
