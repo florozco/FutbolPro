@@ -1,5 +1,12 @@
+@font-face {
+  font-family: noto-color-emoji;
+  src: url('./assets/fonts/NotoColorEmoji.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .app {
-  font-family: sans-serif;
+  font-family: noto-color-emoji;
   min-width: 300px;
   max-width: 600px;
   margin: 50px auto;

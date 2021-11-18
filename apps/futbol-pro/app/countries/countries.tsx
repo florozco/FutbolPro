@@ -1,27 +1,37 @@
-import styled from 'styled-components';
-import { useCountries } from '../useCountries';
 import { IndexProps } from '@futbol-pro/types';
-
-const StyledCountries = styled.div`
-  color: pink;
-`;
+import { useCountries } from '../useCountries';
+import {createGlobalStyle} from "styled-components"
+import FontFaceObserver from "../../pages/fontfaceobserver.standalone";
+import styled from 'styled-components';
+import UnicodeFlag from '../unicode-flag/unicode-flag';
+import Image from 'next/image'
 
 export function Countries(props: IndexProps) {
   const [countriesArray] = useCountries();
   const countries = props.countries ? props.countries : countriesArray;
 
-  return (
-    <StyledCountries>
+//convert emoji U to 2 strings with the U+ and add it to src 
+// https://stackoverflow.com/questions/64909447/got-an-error-invalid-src-prop-here-is-a-link-on-next-image-hostname-loca
+  
+   return (
+    <>
       <h1>Countries</h1>
       {
         countries && countries.length > 0
           ?
-          countries.map(({ code, name, emoji, emojiU }) => <li key={code}>{code} - {name} - {emoji} - {emojiU}  </li>)
+          countries.map(
+            ({ code, name, emoji, emojiU }) =>
+              <li key={code}>
+                {console.log(emoji)}
+                 <UnicodeFlag unicode={emoji} ></UnicodeFlag> - {name}
+              </li>
+            )
           :
           <p>no data</p>
       }
-    </StyledCountries>
+    </>
   );
 }
 
 export default Countries;
+

@@ -1,8 +1,8 @@
 # FutbolPro
 
 graph ql api site { https://countries.trevorblades.com/ }
-https://github.com/googlefonts/noto-emoji/tree/main/fonts
-
+{ https://github.com/googlefonts/noto-emoji/tree/main/fonts }
+{ https://newbedev.com/is-there-a-way-to-display-unicode-flags-by-installing-a-specific-font-if-so-which }
 
 This project was generated using [Nx](https://nx.dev).
 

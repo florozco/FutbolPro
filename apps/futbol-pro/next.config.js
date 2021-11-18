@@ -12,4 +12,10 @@ const nextConfig = {
   },
 };
 
+module.exports = {
+  images: {
+    domains: ['upload.wikimedia.org'],
+  },
+};
+
 module.exports = withNx(nextConfig);
