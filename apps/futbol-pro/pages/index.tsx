@@ -1,13 +1,14 @@
+import { createGlobalStyle } from 'styled-components';
 import { IndexProps } from '@futbol-pro/types';
 import { request, gql } from 'graphql-request'
 import { Ui } from '@futbol-pro/ui';
 import Countries from '../app/countries/countries';
+import FontFaceObserver from "./fontfaceobserver.standalone";
 import Link from 'next/Link';
+import Navbar from '../components/navbar/navbar';
 import styled from 'styled-components';
 import useFontFaceObserver from "./fontfaceobserver.standalone";
-import FontFaceObserver from "./fontfaceobserver.standalone";
 
-import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -57,13 +58,17 @@ export function Index(props: IndexProps) {
 
   return (
     <>
-    <GlobalStyle />  
-    <>
+    <GlobalStyle /> 
+ 
+      <Navbar/>
+  
+    
     <Ui title="Uninorte 2021" showTitle />
     <Link href="/namePlusFlag">NamePlusFlag</Link>
     <Countries countries={countries} />
+
     </>
- </>
+
   );
 } 
 

@@ -21,8 +21,7 @@ export function Countries(props: IndexProps) {
           ?
           countries.map(
             ({ code, name, emoji, emojiU }) =>
-              <li key={code}>
-                {console.log(emoji)}
+              <li key={code}>          
                  <UnicodeFlag unicode={emoji} ></UnicodeFlag> - {name}
               </li>
             )

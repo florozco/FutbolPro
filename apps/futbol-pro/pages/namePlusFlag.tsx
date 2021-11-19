@@ -1,15 +1,21 @@
+import { createGlobalStyle } from 'styled-components';
 import { NamePlusFlagProps } from '@futbol-pro/types';
 import { request, gql } from 'graphql-request'
 import { Ui } from '@futbol-pro/ui';
 import Countries from '../app/countries/countries';
 import Link from 'next/Link';
-import styled from 'styled-components';
+import Navbar from '../components/navbar/navbar';
 
-const StyledPage = styled.div`
-  .page {
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "noto-color-emoji";
+    src: url("../public/NotoColorEmoji.ttf") format("ttf");
+  }
+  *{
+    color: blue;
+    font-family: "noto-color-emoji";
   }
 `;
-
 const query = gql`
 query {
     countries {
@@ -37,11 +43,12 @@ export async function getStaticProps() {
 export function NamePlusFlag(props: NamePlusFlagProps) {
     const { countries } = props;
     return (
-        <StyledPage>
+        <>
+        <GlobalStyle />
+            <Navbar/>
             <Ui title="Uninorte 2021" showTitle />
-            <Link href="/index">About</Link>
             <Countries countries={countries} />
-        </StyledPage>
+            </>
     );
 }
 
