@@ -10,9 +10,6 @@ export function Countries(props: IndexProps) {
   const [countriesArray] = useCountries();
   const countries = props.countries ? props.countries : countriesArray;
 
-//convert emoji U to 2 strings with the U+ and add it to src 
-// https://stackoverflow.com/questions/64909447/got-an-error-invalid-src-prop-here-is-a-link-on-next-image-hostname-loca
-  
    return (
     <>
       <h1>Countries</h1>

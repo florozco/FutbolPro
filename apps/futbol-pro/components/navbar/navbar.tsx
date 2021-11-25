@@ -10,8 +10,6 @@ import {
   NavBtnLink,
 } from './NavbarElements';
 
-/* eslint-disable-next-line */
-export interface NavbarProps {}
 
 const StyledNavbar = styled.div`
   color: pink;
@@ -28,15 +26,20 @@ export function Navbar(props: NavbarProps) {
               index
             </NavLink>
           </NavBtn>
-         <NavBtn>
-          <Link href='/about' >
-            about
-          </Link>
-         </NavBtn>
           <NavBtn>
-          <Link href='/namePlusFlag' >
-            namePlusFlag
-          </Link>
+            <Link href='/about' >
+              about
+            </Link>
+          </NavBtn>
+          <NavBtn>
+            <Link href='/namePlusFlag' >
+              namePlusFlag
+            </Link>
+          </NavBtn>
+          <NavBtn>
+            <Link href='/football' >
+              football
+            </Link>
           </NavBtn>      
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
@@ -47,3 +50,6 @@ export function Navbar(props: NavbarProps) {
 }
 
 export default Navbar;
+
+/* eslint-disable-next-line */
+export interface NavbarProps {}

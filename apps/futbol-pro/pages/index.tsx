@@ -50,9 +50,9 @@ export function Index(props: IndexProps) {
 
   {
     new FontFaceObserver("noto-color-emoji").load().then(function () {
-      console.log('Font is available');
+  //    console.log('Font is available');
     }, function () {
-      console.log('Font is not available');
+     // console.log('Font is not available');
     });
   }
 
