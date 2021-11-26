@@ -1,28 +1,85 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState,createContext, useContext, FC } from "react"
 
 
-
-export const useFootball = () => {
-  const [football, setFootball] = useState([]);
-
-  const myHeaders = new Headers();
-    myHeaders.append("x-rapidapi-key", "13d6349e35e7ced3cbbd9e14d8efcb36");
-    myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
+export const FootballContext = createContext(null);
 
 
+export const FootballProvider:FC = (props) => {
 
-  fetch("https://v3.football.api-sports.io/status", {
+  const [football, setFootball] = useState(null);
+  const [players,setPlayers] = useState(null);
+  const [teams,setTeams] = useState(null);
+  
+  const getStatus = async ()=> await fetch("https://v3.football.api-sports.io/status", {
     method: 'GET',
-    headers: myHeaders,
+    headers: { 
+      'x-rapidapi-key': '07faf70f310c35392066150289cd68d8',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    },
     redirect: 'follow'
   })
-    .then(response => console.log(response))
-//    .then(response => response.text())
-    .then(result => console.log(result))
-    //.then(Response => console.log(Response))
-    .catch(error => console.log('error', error));
+  .then(function(response){
+    //console.log(response)
+    return response.json();
+  })
+  .then(function(myJson) {
+   // console.log(myJson.response);
+    setFootball(myJson.response)
+  })
+  .catch(error => console.log('error', error));
 
-  return [football];
+
+  const getTeams = async (country:string)=> await fetch(`https://v3.football.api-sports.io/teams?country=${country}`, {
+    method: 'GET',
+    headers: { 
+      'x-rapidapi-key': '07faf70f310c35392066150289cd68d8',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    },
+    redirect: 'follow'
+  }).then(function(response){
+    //console.log(response)
+    return response.json();
+  })
+  .then(function(myJson) {
+   // console.log(myJson.response);
+    setTeams(myJson.response)
+  })
+  .catch(error => console.log('error', error));
+
+
+  const getPlayers = async (teamID:string)=> await fetch(`https://v3.football.api-sports.io/players/squads?team=${teamID}`, {
+    method: 'GET', 
+    headers: { 
+      'x-rapidapi-key': '07faf70f310c35392066150289cd68d8',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    },
+    redirect: 'follow'
+  }).then(function(response){
+    //console.log(response)
+    return response.json();
+  })
+  .then(function(myJson) {
+    //console.log(myJson.response);
+    setPlayers(myJson.response)
+  })
+  .catch(error => console.log('error', error));
+
+  const value = {  
+    football, getStatus:getStatus,
+    players , getPlayers:getPlayers,
+    teams   , getTeams:getTeams,      
+  };
+
+   return(
+      <FootballContext.Provider value={value}>
+        {props.children}
+      </FootballContext.Provider>  
+   );
+
+}; 
+
+export const useFootball = () => {
+  return useContext(FootballContext);
 }
 
 export default useFootball;

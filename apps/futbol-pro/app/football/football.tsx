@@ -1,20 +1,23 @@
-import { IndexProps } from '@futbol-pro/types';
 import { useFootball } from './useFootball';
-import {createGlobalStyle} from "styled-components"
-import FontFaceObserver from "../../pages/fontfaceobserver.standalone";
-import styled from 'styled-components';
-import UnicodeFlag from '../unicode-flag/unicode-flag';
-import Image from 'next/image'
+import { useEffect } from 'react';
 
 export function Football() {
-  const [footballArray] = useFootball();
-  const football = footballArray;
-
+  const FootballContext = useFootball();
+  console.log(FootballContext.football)
+  useEffect(()=> {FootballContext.getStatus()},[]);
    return (
     <>
       <h1>Football</h1>
       {
-   
+      FootballContext.football 
+      ?     
+        <p>
+          {FootballContext.football.account.firstname} - {FootballContext.football.account.lastname} - {FootballContext.football.account.email}
+        </p>
+      :
+        <p>
+          no data
+        </p>
       }
     </>
   );

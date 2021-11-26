@@ -36,11 +36,16 @@ export function Navbar(props: NavbarProps) {
               namePlusFlag
             </Link>
           </NavBtn>
-          <NavBtn>
+      {/*    <NavBtn>
             <Link href='/football' >
               football
             </Link>
-          </NavBtn>      
+          </NavBtn>*/}
+          <NavBtn>
+            <Link href='/footballTeams' >
+              football-team
+            </Link>
+          </NavBtn>         
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>   

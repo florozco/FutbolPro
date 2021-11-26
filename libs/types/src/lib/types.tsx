@@ -7,3 +7,8 @@ export interface UnicodeFlagProps { unicode: string; }
 
 
 export interface FootballProps { footballJson: JSON };  
+
+
+export interface TeamProps {country:string};
+
+export interface PlayerProps {teamID:string};

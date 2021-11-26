@@ -1,10 +1,8 @@
 import { IndexProps } from '@futbol-pro/types';
 import { useCountries } from '../useCountries';
-import {createGlobalStyle} from "styled-components"
 import FontFaceObserver from "../../pages/fontfaceobserver.standalone";
-import styled from 'styled-components';
 import UnicodeFlag from '../unicode-flag/unicode-flag';
-import Image from 'next/image'
+import Link from 'next/Link';
 
 export function Countries(props: IndexProps) {
   const [countriesArray] = useCountries();
@@ -17,10 +15,17 @@ export function Countries(props: IndexProps) {
         countries && countries.length > 0
           ?
           countries.map(
-            ({ code, name, emoji, emojiU }) =>
-              <li key={code}>          
-                 <UnicodeFlag unicode={emoji} ></UnicodeFlag> - {name}
+            ({ code, name, emoji, emojiU }) =>  
+            <Link key={code} href={{
+              pathname: "/footballTeam",
+              query: {
+                 country: name
+              }
+          }} >
+              <li >   
+                 <UnicodeFlag unicode={emoji} ></UnicodeFlag> - {name}                 
               </li>
+            </Link>
             )
           :
           <p>no data</p>

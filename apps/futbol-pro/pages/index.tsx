@@ -58,14 +58,11 @@ export function Index(props: IndexProps) {
 
   return (
     <>
-    <GlobalStyle /> 
- 
-      <Navbar/>
-  
-    
+    <GlobalStyle />  
+    <Navbar/>    
     <Ui title="Uninorte 2021" showTitle />
     <Link href="/namePlusFlag">NamePlusFlag</Link>
-    <Countries countries={countries} />
+
 
     </>
 
