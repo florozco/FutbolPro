@@ -12,7 +12,7 @@ export  function Team(props: TeamProps) {
   useEffect(()=> {FootballContext.getTeams(props.country)},[]);
 
 
-  
+ 
   return (
     <>
       <h1>Welcome to Team!</h1>
@@ -25,13 +25,12 @@ export  function Team(props: TeamProps) {
               pathname: "/footballPlayer",
               query: {
                  teamID: team.id
-              }
-          }} >
+            }}} >
                <li key={team.id}>          
-                  {team.id} - {team.name} -
-                  <Image loader={() => `https://media.api-sports.io/football/teams/${team.id}.png`} src={team.logo} alt={team.name} width={32} height={32} />
+                  {team.id} - {team.name} - <Image loader={() => `https://media.api-sports.io/football/teams/${team.id}.png`} src={team.logo} alt={team.name} width={32} height={32} />          
                 </li>
             </Link>
+            
             )
           :
           <p>error</p>

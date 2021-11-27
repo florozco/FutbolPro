@@ -10,19 +10,20 @@ export  function Player(props: PlayerProps) {
   
   useEffect(()=> {FootballContext.getPlayers(props.teamID)},[]);
 
-  //<Image loader={() => `https://media.api-sports.io/football/players/${players.id}.png`} src={players.photo} alt={players.name} width={32} height={32} /> 
+  const [listaJug] = [FootballContext.players];
+  
   return (
     <>
       <h1>Welcome to Player!</h1>
       {
-        FootballContext.players && FootballContext.players.length > 0
+        listaJug && listaJug.length > 0
           ?
-          FootballContext.players.map(            
-            ({players}) =>
-              <li key={players.id}>          
-                 {players.id} - {players.name} -  {players.photo}
-                             
-              </li>
+          listaJug.map(            
+            ({id,name,photo}) =>
+             <li key={id}>          
+                 {id} - {name}   -
+                 <Image loader={() =>  `https://media.api-sports.io/football/players/${id}.png`} src={photo} alt={name} width={32} height={32} />                           
+            </li>
             )
           :
           <p>error</p>
