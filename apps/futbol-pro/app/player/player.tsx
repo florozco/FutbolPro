@@ -26,7 +26,7 @@ export  function Player(props: PlayerProps) {
             </li>
             )
           :
-          <p>error</p>
+          <p>Loading...</p>
       }
     </>
   );
