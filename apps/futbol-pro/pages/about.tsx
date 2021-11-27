@@ -25,7 +25,7 @@ export function About() {
     <GlobalStyle />  
       <Navbar/>
       <Ui title='about' showTitle={true} />
-      <p>Thank you for using and showing some ♥ for Nx.</p>
+      <p>Hacer click en cualquier item de lista para ser redirigido para mas detalles</p>
   </>
   );
 }

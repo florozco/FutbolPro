@@ -41,12 +41,12 @@ export function Navbar(props: NavbarProps) {
             <Link href='/football' >
               football
             </Link>
-          </NavBtn>*/}
+          </NavBtn>
           <NavBtn>
             <Link href='/footballTeams' >
               football-team
             </Link>
-          </NavBtn>         
+          </NavBtn>        */} 
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>   
