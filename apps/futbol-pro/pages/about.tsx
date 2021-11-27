@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { request, gql } from 'graphql-request'
 import { Ui } from '@futbol-pro/ui';
 import Countries from '../app/countries/countries';
-// @ts-ignore  
+  
 import Link from 'next/Link';
 import Navbar from '../components/navbar/navbar';
 

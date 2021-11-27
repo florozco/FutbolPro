@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// @ts-ignore 
+ 
 import Link from 'next/Link';
 import React from 'react';
 import {

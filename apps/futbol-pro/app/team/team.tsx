@@ -2,7 +2,7 @@ import { TeamProps } from '@futbol-pro/types';
 import { useFootball } from '../football/useFootball';
 import { useEffect } from 'react';
 import Image from 'next/image'
-// @ts-ignore  
+  
 import Link from 'next/Link';
 
 export  function Team(props: TeamProps) {

@@ -4,7 +4,7 @@ import { request, gql } from 'graphql-request'
 import { Ui } from '@futbol-pro/ui';
 import Countries from '../app/countries/countries';
 //import FontFaceObserver from "./fontfaceobserver.standalone";
-// @ts-ignore  
+  
 import Link from 'next/Link';
 import Navbar from '../components/navbar/navbar';
 import styled from 'styled-components';
