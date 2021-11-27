@@ -1,4 +1,5 @@
 import { FaBars } from 'react-icons/fa';
+// @ts-ignore
 import Link from 'next/Link';
 import styled from 'styled-components';
 

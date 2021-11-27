@@ -2,6 +2,7 @@ import { CountryProps } from '@futbol-pro/types';
 import { useCountries } from '../useCountries';
 //import FontFaceObserver from "../../pages/fontfaceobserver.standalone";
 import UnicodeFlag from '../unicode-flag/unicode-flag';
+// @ts-ignore
 import Link from 'next/Link';
 
 export function Countries(props: CountryProps) {
