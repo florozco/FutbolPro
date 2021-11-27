@@ -33,7 +33,7 @@ export  function Team(props: TeamProps) {
             
             )
           :
-          <p>Loading...</p>
+          <p>error</p>
       }
     </>
   );

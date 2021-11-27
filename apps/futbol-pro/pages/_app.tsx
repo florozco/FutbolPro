@@ -1,6 +1,8 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
+import {FootballProvider} from "../app/football/useFootball";
+import Football from '../app/football/football';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,7 +13,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <div className="app">
 
         <main>
-          <Component {...pageProps} />
+          <FootballProvider>
+            <Component {...pageProps} />
+          </FootballProvider>
         </main>
       </div>
     </>

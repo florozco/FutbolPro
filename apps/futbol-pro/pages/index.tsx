@@ -50,22 +50,19 @@ export function Index(props: CountryProps) {
 
   {
     new FontFaceObserver("noto-color-emoji").load().then(function () {
-      console.log('Font is available');
+  //    console.log('Font is available');
     }, function () {
-      console.log('Font is not available');
+     // console.log('Font is not available');
     });
   }
 
   return (
     <>
-    <GlobalStyle /> 
- 
-      <Navbar/>
-  
-    
+    <GlobalStyle />  
+    <Navbar/>    
     <Ui title="Uninorte 2021" showTitle />
     <Link href="/namePlusFlag">NamePlusFlag</Link>
-    <Countries countries={countries} />
+
 
     </>
 
