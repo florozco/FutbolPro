@@ -7,7 +7,7 @@ import Countries from '../app/countries/countries';
 import Link from 'next/Link';
 import Navbar from '../components/navbar/navbar';
 import styled from 'styled-components';
-import useFontFaceObserver from "./fontfaceobserver.standalone";
+//import useFontFaceObserver from "./fontfaceobserver.standalone";
 
 
 const GlobalStyle = createGlobalStyle`
