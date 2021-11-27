@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { IndexProps } from '@futbol-pro/types';
+import { CountryProps } from '@futbol-pro/types';
 import { request, gql } from 'graphql-request'
 import { Ui } from '@futbol-pro/ui';
 import Countries from '../app/countries/countries';
@@ -45,7 +45,7 @@ export async function getStaticProps() {
 
 
 
-export function Index(props: IndexProps) {
+export function Index(props: CountryProps) {
   const { countries } = props;
 
   {

@@ -1,4 +1,4 @@
-import { IndexProps } from '@futbol-pro/types';
+import { CountryProps } from '@futbol-pro/types';
 import { useCountries } from '../useCountries';
 import {createGlobalStyle} from "styled-components"
 import FontFaceObserver from "../../pages/fontfaceobserver.standalone";
@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import UnicodeFlag from '../unicode-flag/unicode-flag';
 import Image from 'next/image'
 
-export function Countries(props: IndexProps) {
+export function Countries(props: CountryProps) {
   const [countriesArray] = useCountries();
   const countries = props.countries ? props.countries : countriesArray;
 
